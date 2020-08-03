@@ -64,6 +64,8 @@ export default class Index extends Component {
   componentDidShow() {
     //在reactjs不存在, 在taro中存在
     console.log("页面显示时触发");
+    let { name, age } = getCurrentInstance().router.params;
+    console.log("name:" + name + ",age:" + age);
   }
 
   // componentDidHide() {

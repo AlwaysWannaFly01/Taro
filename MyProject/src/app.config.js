@@ -1,7 +1,7 @@
 export default {
   pages: [
-    'pages/event/event',
     'pages/test/test',
+    'pages/event/event',
     'pages/index/index',
   ],
   window: {

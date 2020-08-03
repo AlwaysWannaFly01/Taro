@@ -1,5 +1,6 @@
 export default {
   pages: [
+    'pages/event/event',
     'pages/test/test',
     'pages/index/index',
   ],

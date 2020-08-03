@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Taro, { requirePlugin } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 import { View, Text, Button, Image } from "@tarojs/components";
 import { setDate, getDate } from "../../utils";
 import namedPng from "../../image/1.jpg";

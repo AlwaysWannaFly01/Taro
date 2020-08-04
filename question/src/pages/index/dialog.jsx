@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button, Input, Textarea } from "@tarojs/components";
-import "./dialog.scss";
+import "./dialog.min.css";
 
 export default class Dialog extends Component {
     componentWillMount() {}

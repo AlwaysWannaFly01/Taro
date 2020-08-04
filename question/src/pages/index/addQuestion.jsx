@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Button, Input, Textarea } from "@tarojs/components";
 import Taro from "@tarojs/taro";
-import "./addQuestion.scss";
+import "./addQuestion.min.css";
 import Dialog from "./dialog";
 export default class AddQuestion extends Component {
     state = {

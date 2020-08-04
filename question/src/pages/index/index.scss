@@ -13,6 +13,37 @@
         bottom: 0;
         width: 100%;
         border-radius: 0;
-        background-color: skyblue;
+    }
+    .question-list{
+        margin-top: 10PX;
+        font-size: 14PX;
+        .list{
+            margin: 20PX 0;
+            padding: 0 10PX;
+            display: flex;
+            justify-content: space-between;
+            word-break: break-all;
+            .left{
+                .list-title{
+                    font-size: 18PX;
+                    display: flex;
+                }
+                .list-des{
+                    margin-top: 5PX;
+                }
+                flex: 1;
+            }
+            .right{
+                width: 40PX;
+                margin-left: 5PX;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .icon{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
     }
 }

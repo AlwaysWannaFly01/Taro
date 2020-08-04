@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { View, Text, Button, Input, Textarea } from "@tarojs/components";
 import Taro from "@tarojs/taro";
-import "./addQuestion.min.css";
+import "./addQuestion.scss";
 import Dialog from "./dialog";
+import { AtIcon, AtButton } from "taro-ui";
+
 export default class AddQuestion extends Component {
     state = {
         title: "",
@@ -56,18 +58,18 @@ export default class AddQuestion extends Component {
                             onInput={this.changeDes.bind(this)}
                         ></Textarea>
                         <View className="btn-group">
-                            <Button
-                                className="btn-item ok"
+                            <AtButton
+                                className="btn-item sure"
                                 onClick={this.sure.bind(this)}
                             >
-                                确定
-                            </Button>
-                            <Button
-                                className="btn-item"
+                            确定
+                            </AtButton>
+                            <AtButton
+                                className="btn-item cancel"
                                 onClick={this.btnCancel.bind(this)}
                             >
                                 取消
-                            </Button>
+                            </AtButton>
                         </View>
                     </View>
                 </View>

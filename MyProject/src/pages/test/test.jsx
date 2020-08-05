@@ -37,19 +37,21 @@ export default class Test extends Component {
 
   componentDidShow() {
     console.log("test页面显示时触发");
-    let id = this.state.url;
 
-    if(id){
-      let el = document.getElementById(id);
-      if (el) {
-        el.style.display = "none";
-      }
-    }
+    /* 3.0.6版本存在bug ; h5 A跳转B  然后浏览器返回  A与B都在; 以下为临时解决办法 */
+    // let id = this.state.url;
+    // if(id){
+    //   let el = document.getElementById(id);
+    //   if (el) {
+    //     el.style.display = "none";
+    //   }
+    // }
   }
 
   handelCLick() {
     setDate();
     /* h5浏览器返回,会保存上一页面的内容 */
+    /* 该bug已在3.0.7更新版本中修复 */
     let url = "/pages/index/index?name=zhangsan&age=12";
     this.setState({
       url,

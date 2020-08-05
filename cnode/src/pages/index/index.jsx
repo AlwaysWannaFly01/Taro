@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Button, Text } from "@tarojs/components";
-
 import "./index.scss";
-import { getTopicList } from "../../utils/request";
+import Menu from "../../components/menu/menu";
+
 class Index extends Component {
     componentWillReceiveProps(nextProps) {
         console.log(this.props, nextProps);
@@ -10,11 +10,7 @@ class Index extends Component {
 
     componentWillUnmount() {}
 
-    componentDidMount() {
-        getTopicList().then((data)=>{
-            console.log(data);
-        })
-    }
+    componentDidMount() {}
     componentDidShow() {}
 
     componentDidHide() {}
@@ -22,9 +18,7 @@ class Index extends Component {
     render() {
         return (
             <View className="index">
-                <View>
-                    <Text>Hello, World</Text>
-                </View>
+                <Menu></Menu>
             </View>
         );
     }

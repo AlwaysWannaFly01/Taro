@@ -1,4 +1,4 @@
-import Taro, { usePageScroll } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 // import api from "../constants/api";
 
 export function getJSON(url, data) {

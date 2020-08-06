@@ -1,3 +1,4 @@
+import { getTopicList } from "./topicList";
 //显示抽屉
 export function showDrawer() {
     return (dispatch) => {
@@ -22,5 +23,6 @@ export function changeCataState(cata) {
             type: "changeCategory",
             currentCata: cata,
         });
+        dispatch(getTopicList({ tab: cata.key, page: 1, limit: 20 }));
     };
 }

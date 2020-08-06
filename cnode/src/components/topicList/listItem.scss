@@ -1,0 +1,63 @@
+.topic-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10PX 10PX;
+
+    .headImg {
+        width: 40PX;
+        height: 40PX;
+        min-width: 40PX;
+    }
+
+    .item-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10PX;
+
+        .item-title {
+            display: flex;
+            word-break: break-all;
+            margin-bottom: 10PX;
+
+            .title-oper {
+                background-color: salmon;
+                width: 46PX;
+                height: 24PX;
+                line-height: 24PX;
+                font-size: 14PX;
+                text-align: center;
+                color: #fff;
+                margin-top: 5PX;
+                border-radius: 2PX;
+
+                &.share {
+                    background-color: skyblue;
+                }
+
+                &.ask {
+                    background-color: #c5c5c5;
+                }
+            }
+
+            .title-text {
+                flex: 1;
+                font-size: 16PX;
+                margin-left: 10PX;
+            }
+        }
+
+        .item-info {
+
+            display: flex;
+            justify-content: space-between;
+
+            .text {
+                font-size: 14PX;
+                color: #ccc;
+            }
+        }
+    }
+
+}

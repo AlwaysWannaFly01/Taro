@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Button, Text } from "@tarojs/components";
 import "./index.scss";
 import Menu from "../../components/menu/menu";
+import TopicList from "../../components/topicList/topicList";
 
 class Index extends Component {
     componentWillReceiveProps(nextProps) {
@@ -19,6 +20,7 @@ class Index extends Component {
         return (
             <View className="index">
                 <Menu></Menu>
+                <TopicList></TopicList>
             </View>
         );
     }

@@ -40,7 +40,10 @@ class Menu extends Component {
     clickCata(index) {
         let { cataData } = this.props;
         let clickItem = cataData[index];
-        this.props.changeCata && this.props.changeCata(clickItem);
+        /* 点击其它项才请求 */
+        if (this.props.currentCata.key !== clickItem.key) {
+            this.props.changeCata && this.props.changeCata(clickItem);
+        }
     }
     render() {
         let { showDrawerFlag, cataData } = this.props;

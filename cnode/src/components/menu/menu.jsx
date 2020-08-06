@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, Button, Text } from "@tarojs/components";
 import { connect } from "react-redux";
 import { AtDrawer, AtIcon } from "taro-ui";
-import { showDrawer } from "../../actions/menu";
+import { showDrawer, changeCataState, hideDrawer } from "../../actions/menu";
 
 import "./menu.scss";
 
@@ -16,6 +16,12 @@ import "./menu.scss";
             showMenu() {
                 dispatch(showDrawer());
             },
+            hideMenu() {
+                dispatch(hideDrawer());
+            },
+            changeCata(cata) {
+                dispatch(changeCataState(cata));
+            },
         };
     }
 )
@@ -24,17 +30,32 @@ class Menu extends Component {
     showDrawer() {
         this.props.showMenu && this.props.showMenu();
     }
+    closeDrawer() {
+        this.props.hideMenu && this.props.hideMenu();
+    }
+    getItems(cataData) {
+        return cataData.map((item, index) => item.value);
+    }
+    //点击分类触发
+    clickCata(index) {
+        let { cataData } = this.props;
+        let clickItem = cataData[index];
+        this.props.changeCata && this.props.changeCata(clickItem);
+    }
     render() {
-        let { showDrawer } = this.props;
+        let { showDrawerFlag, cataData } = this.props;
+        let items = this.getItems(cataData);
         return (
             <View className="topicList-menu">
-                <AtDrawer
-                    className="_drawer"
-                    style="position:absolute"
-                    show={showDrawer}
-                    mask
-                    items={["菜单1", "菜单2"]}
-                ></AtDrawer>
+                <View className="_drawer">
+                    <AtDrawer
+                        show={showDrawerFlag}
+                        mask
+                        items={items}
+                        onItemClick={this.clickCata.bind(this)}
+                        onClose={this.closeDrawer.bind(this)}
+                    ></AtDrawer>
+                </View>
                 <View
                     className="at-icon at-icon-menu"
                     size="30"

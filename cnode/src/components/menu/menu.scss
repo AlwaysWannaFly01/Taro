@@ -8,13 +8,16 @@
     box-sizing: border-box;
     padding: 4PX 10PX;
     position: relative;
+
     .at-icon {
-        font-size: 24PX;
+        font-size: 26PX;
     }
-    .title{
+
+    .title {
         font-size: 20PX;
     }
-    ._drawer{
+
+    ._drawer {
         position: absolute;
     }
 }

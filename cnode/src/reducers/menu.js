@@ -29,19 +29,19 @@ const MENU_STATE = {
         key: "all",
         value: "全部",
     },
-    showDrawer: false,
+    showDrawerFlag: false,
 };
 
 export default function menu(prestate = MENU_STATE, action) {
     switch (action.type) {
         //显示分类抽屉
         case "showDrawer":
-            return { ...prestate, showDrawer: true };
+            return { ...prestate, showDrawerFlag: true };
         //隐藏抽屉
         case "hideDrawer":
-            return { ...prestate, showDrawer: false };
+            return { ...prestate, showDrawerFlag: false };
         //点击抽屉,触发切换分类
-        case "changeCata":
+        case "changeCategory":
             return { ...prestate, currentCata: action.currentCata };
         default:
             return { ...prestate };

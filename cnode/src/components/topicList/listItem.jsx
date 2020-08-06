@@ -10,12 +10,17 @@ class ListItem extends Component {
         let T_index = str.indexOf("T");
         return str.substring(0, T_index);
     }
-
+    geToDetail() {
+        Taro.navigateTo({ url: "/pages/detail/index" });
+    }
     render() {
         let { itemData } = this.props;
         let changeDate = this.getDateStr(itemData.create_at);
         return (
-            <View className="topic-list-item">
+            <View
+                className="topic-list-item"
+                onClick={this.geToDetail.bind(this)}
+            >
                 <AtAvatar
                     image={
                         itemData.author.avatar_url

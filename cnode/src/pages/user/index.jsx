@@ -5,13 +5,10 @@ import "./index.scss";
 
 class Index extends Component {
     componentWillReceiveProps(nextProps) {
-        console.log(this.props, nextProps);
     }
 
     componentWillUnmount() {}
     componentWillMount() {
-        let { topicId } = getCurrentInstance().router.params;
-        console.log("topicId:" + topicId);
     }
     componentDidMount() {}
     componentDidShow() {}
@@ -19,7 +16,7 @@ class Index extends Component {
     componentDidHide() {}
 
     render() {
-        return <View className="index">detail</View>;
+        return <View className="index">user</View>;
     }
 }
 

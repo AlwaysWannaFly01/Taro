@@ -10,8 +10,8 @@ class ListItem extends Component {
         let T_index = str.indexOf("T");
         return str.substring(0, T_index);
     }
-    geToDetail() {
-        Taro.navigateTo({ url: "/pages/detail/index" });
+    geToDetail(param) {
+        Taro.navigateTo({ url: "/pages/detail/index?topicId=" + param.id});
     }
     render() {
         let { itemData } = this.props;
@@ -19,7 +19,7 @@ class ListItem extends Component {
         return (
             <View
                 className="topic-list-item"
-                onClick={this.geToDetail.bind(this)}
+                onClick={this.geToDetail.bind(this, itemData)}
             >
                 <AtAvatar
                     image={

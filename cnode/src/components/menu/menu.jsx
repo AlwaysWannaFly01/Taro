@@ -45,6 +45,11 @@ class Menu extends Component {
             this.props.changeCata && this.props.changeCata(clickItem);
         }
     }
+    goToUser() {
+        Taro.navigateTo({
+            url: "/pages/user/index",
+        });
+    }
     render() {
         let { showDrawerFlag, cataData } = this.props;
         let items = this.getItems(cataData);
@@ -69,7 +74,10 @@ class Menu extends Component {
                         ? this.props.currentCata.value
                         : ""}
                 </Text>
-                <View className="at-icon at-icon-user"></View>
+                <View
+                    className="at-icon at-icon-user"
+                    onClick={this.goToUser.bind(this)}
+                ></View>
             </View>
         );
     }

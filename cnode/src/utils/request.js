@@ -13,6 +13,9 @@ export function postJSON(url, data) {
         url: url,
         data: data,
         method: "POST",
+        header: {
+            "content-type": "application/json",
+        },
     });
 }
 

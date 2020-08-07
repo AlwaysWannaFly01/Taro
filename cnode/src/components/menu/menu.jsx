@@ -1,8 +1,8 @@
 import Taro from "@tarojs/taro";
 import React, { Component } from "react";
-import { View, Button, Text } from "@tarojs/components";
+import { View, Text } from "@tarojs/components";
 import { connect } from "react-redux";
-import { AtDrawer, AtIcon } from "taro-ui";
+import { AtDrawer } from "taro-ui";
 import { showDrawer, changeCataState, hideDrawer } from "../../actions/menu";
 import { ValidateUser } from "../../actions/user";
 import "./menu.scss";

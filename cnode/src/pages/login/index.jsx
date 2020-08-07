@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Taro, { getCurrentInstance } from "@tarojs/taro";
 import { View, Button, Text } from "@tarojs/components";
 import "./index.scss";
-
-class User extends Component {
+import Head from "../../components/head/head";
+class Login extends Component {
     componentWillReceiveProps(nextProps) {}
 
     componentWillUnmount() {}
@@ -14,8 +14,12 @@ class User extends Component {
     componentDidHide() {}
 
     render() {
-        return <View className="index">User</View>;
+        return (
+            <View className="login-container">
+                <Head />
+            </View>
+        );
     }
 }
 
-export default User;
+export default Login;

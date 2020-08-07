@@ -4,7 +4,7 @@ import { View, Button, Text } from "@tarojs/components";
 import { connect } from "react-redux";
 import { AtDrawer, AtIcon } from "taro-ui";
 import { showDrawer, changeCataState, hideDrawer } from "../../actions/menu";
-
+import { ValidateUser } from "../../actions/user";
 import "./menu.scss";
 
 @connect(
@@ -46,8 +46,15 @@ class Menu extends Component {
         }
     }
     goToUser() {
-        Taro.navigateTo({
-            url: "/pages/user/index",
+        let { user } = this.props;
+        // console.log(user);
+        // console.log(ValidateUser(user));
+        ValidateUser(user).then((res) => {
+            if (res) {
+                Taro.navigateTo({
+                    url: "/pages/user/index",
+                });
+            }
         });
     }
     render() {

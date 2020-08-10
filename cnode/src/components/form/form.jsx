@@ -13,7 +13,7 @@ import "./form.min.css";
     (dispatch) => {
         return {
             getAccessUserToken(param) {
-                dispatch(accessUserToken(param));
+                return dispatch(accessUserToken(param));
             },
         };
     }
@@ -42,10 +42,12 @@ class Form extends Component {
                     .getAccessUserToken({
                         accesstoken: value,
                     })
-                    // .then((res) => {
-                    //     console.log(res);
-                    //     Taro.redirectTo({ url: "/pages/user/index" });
-                    // })
+                    .then((res) => {
+                        console.log(res);
+                        if (res.success) {
+                            Taro.redirectTo({ url: "/pages/user/index" });
+                        }
+                    });
             }
         } else {
             Taro.showToast({

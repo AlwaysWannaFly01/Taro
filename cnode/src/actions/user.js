@@ -15,16 +15,12 @@ export const ValidateUser = async (params) => {
 export function accessUserToken(params) {
     return async (dispatch) => {
         let result = await postJSON(api.checkUserToken, params);
-        console.log(result);
         if (result && result.data && result.data.success) {
             dispatch({
                 type: "loginSuccess",
                 accesstoken: params.accesstoken,
                 avatar_url: result.data.avatar_url,
                 login_name: result.data.loginname,
-            });
-            Taro.navigateTo({
-                url: "/pages/user/index",
             });
             return result.data;
         }

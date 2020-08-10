@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { postJSON } from "../utils/request";
+import { getJSON, postJSON } from "../utils/request";
 import api from "../constants/api";
 
 export const ValidateUser = async (params) => {
@@ -15,6 +15,7 @@ export const ValidateUser = async (params) => {
 export function accessUserToken(params) {
     return async (dispatch) => {
         let result = await postJSON(api.checkUserToken, params);
+        console.log(result);
         if (result && result.data && result.data.success) {
             dispatch({
                 type: "loginSuccess",
@@ -22,7 +23,21 @@ export function accessUserToken(params) {
                 avatar_url: result.data.avatar_url,
                 login_name: result.data.loginname,
             });
+            Taro.navigateTo({
+                url: "/pages/user/index",
+            });
+            return result.data;
         }
-        return result.data;
     };
+}
+
+//获取用户信息
+export async function getUserInfo(params) {
+    let result = await getJSON(api.getUserInfo + params);
+    console.log(result);
+    if (result && result.data && result.data.success) {
+        return result.data;
+    } else {
+        Taro.showToast({ title: "获取用户信息失败" });
+    }
 }

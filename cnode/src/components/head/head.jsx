@@ -7,7 +7,7 @@ import loginBack from "../../assets/img/loginBack.jpg";
 import head from "../../assets/img/head.png";
 class Head extends Component {
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { loginName, avatarUrl } = this.props;
         return (
             <View className="login-head">

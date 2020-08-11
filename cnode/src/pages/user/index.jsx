@@ -240,7 +240,7 @@ class User extends Component {
     componentWillUnmount() {}
     componentWillMount() {
         getUserInfo(this.props.login_name).then((res) => {
-            console.log(res);
+            // console.log(res);
             if (res.success) {
                 if (res.data.recent_topics.length > 0) {
                     this.setState({
@@ -261,7 +261,7 @@ class User extends Component {
     componentDidHide() {}
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { login_name, avatar_url } = this.props;
         const { recent_topics, recent_replies } = this.state;
         return (

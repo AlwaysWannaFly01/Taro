@@ -15,6 +15,7 @@ export const ValidateUser = async (params) => {
 export function accessUserToken(params) {
     return async (dispatch) => {
         let result = await postJSON(api.checkUserToken, params);
+        console.log(result);
         if (result && result.data && result.data.success) {
             dispatch({
                 type: "loginSuccess",
@@ -23,14 +24,22 @@ export function accessUserToken(params) {
                 login_name: result.data.loginname,
             });
             return result.data;
+        } else {
+            dispatch({
+                type: "loginFail",
+                accesstoken: null,
+                avatar_url: null,
+                login_name: null,
+            });
+            return false;
         }
+        return false;
     };
 }
 
 //获取用户信息
 export async function getUserInfo(params) {
     let result = await getJSON(api.getUserInfo + params);
-    console.log(result);
     if (result && result.data && result.data.success) {
         return result.data;
     } else {

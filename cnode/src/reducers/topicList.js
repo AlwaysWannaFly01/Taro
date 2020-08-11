@@ -21,6 +21,12 @@ export default function topicList(prestate = TOPIC_STATE, action) {
                 list: prestate.list.concat(action.list),
                 page: action.page,
             };
+        case "getTopicInfo":
+            console.log(action);
+            return {
+                ...prestate,
+                topicInfo: action.infoData,
+            };
         default:
             return {
                 ...prestate,

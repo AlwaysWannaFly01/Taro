@@ -47,6 +47,9 @@ class Form extends Component {
                         if (res.success) {
                             Taro.redirectTo({ url: "/pages/user/index" });
                         }
+                    })
+                    .catch((e) => {
+                        console.log(e);
                     });
             }
         } else {

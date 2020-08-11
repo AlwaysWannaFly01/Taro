@@ -11,6 +11,17 @@ export default function user(prestate = USER_STATE, action) {
             let successState = { ...prestate, ...action };
             setCache(caCheKey, successState);
             return successState;
+        case "loginFail":
+            let failState = {
+                ...prestate,
+                accesstoken: action.accesstoken,
+                loginname: action.login_name,
+                avatar_url: action.avatar_url,
+            };
+            console.log(failState);
+            setCache(caCheKey, failState );
+            return failState;
+
         default:
             return { ...prestate };
     }

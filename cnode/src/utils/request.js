@@ -16,7 +16,7 @@ export function postJSON(url, data) {
         header: {
             "content-type": "application/json",
         },
-        mode: "cors",
+        mode: "cors"
     });
 }
 

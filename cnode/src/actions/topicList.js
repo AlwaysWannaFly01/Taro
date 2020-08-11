@@ -32,3 +32,19 @@ export function getNextList(params) {
         }
     };
 }
+
+export function getTopicInfo(params) {
+    return async (dispatch) => {
+        let result = await getJSON(
+            api.getTopicInfo + "/" + params.topicId,
+            params
+        );
+        console.log(result);
+        if (result && result.data && result.data.success) {
+            dispatch({
+                type: "getTopicInfo",
+                infoData: result.data.data,
+            });
+        }
+    };
+}

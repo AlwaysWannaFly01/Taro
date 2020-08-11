@@ -2,13 +2,18 @@ import Taro from "@tarojs/taro";
 // import api from "../constants/api";
 
 export function getJSON(url, data) {
+    Taro.showLoading();
     return Taro.request({
         url: url,
         data: data,
         method: "GET",
+    }).then((res) => {
+        Taro.hideLoading();
+        return res;
     });
 }
 export function postJSON(url, data) {
+    Taro.showLoading();
     return Taro.request({
         url: url,
         data: data,
@@ -16,7 +21,10 @@ export function postJSON(url, data) {
         header: {
             "content-type": "application/json",
         },
-        mode: "cors"
+        mode: "cors",
+    }).then((res) => {
+        Taro.hideLoading();
+        return res;
     });
 }
 

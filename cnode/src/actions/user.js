@@ -3,12 +3,9 @@ import { getJSON, postJSON } from "../utils/request";
 import api from "../constants/api";
 
 export const ValidateUser = async (params) => {
-    if (params && params.accessToken) {
+    if (params && params.accesstoken) {
         return true;
     }
-    Taro.navigateTo({
-        url: "/pages/login/index",
-    });
     return false;
 };
 

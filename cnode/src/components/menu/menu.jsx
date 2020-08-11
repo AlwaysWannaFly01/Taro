@@ -9,7 +9,7 @@ import "./menu.scss";
 
 @connect(
     (store) => {
-        return { ...store.menu };
+        return { ...store.menu,user:store.user };
     },
     (dispatch) => {
         return {
@@ -48,13 +48,18 @@ class Menu extends Component {
     goToUser() {
         let { user } = this.props;
         // console.log(user);
-        // console.log(ValidateUser(user));
         ValidateUser(user).then((res) => {
+			// console.log(res);
             if (res) {
+				//成功跳转到用户详情
                 Taro.navigateTo({
                     url: "/pages/user/index",
                 });
-            }
+            }else{
+				Taro.navigateTo({
+                    url: "/pages/login/index",
+                });
+			}
         });
     }
     render() {
